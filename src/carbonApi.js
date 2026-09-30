@@ -1,3 +1,4 @@
+import { getProductImage } from './assetMap';
 const API_URL = 'https://istedkhoslreungtcdfe.supabase.co/functions/v1/carbon-api';
 
 async function call(action, payload = {}, token = null) {
@@ -45,7 +46,7 @@ export function mapProduct(row) {
     rating: Number(row.rating_average || 0),
     reviews: Number(row.reviews_count || 0),
     image: kind,
-    imageUrl: row.main_image_url || null,
+    imageUrl: getProductImage(row.slug, row.main_image_url || null),
     badge: discount ? `-${discount}%` : row.is_new ? 'جديد' : row.on_offer ? 'عرض' : '',
     detail: row.short_description_ar || '',
     stock: Number(row.stock || 0),
