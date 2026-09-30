@@ -10,3 +10,15 @@
 .store-state{min-height:170px;border:1px dashed var(--line);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:var(--muted);text-align:center;padding:20px}
 .store-state b{color:#eef5ef;font-size:14px}.store-state span{font-size:11px}.store-state.error{color:#ff8b8f;border-color:rgba(255,91,97,.35)}
 @media(max-width:700px){.real-product-image{height:125px}}
+
+.admin-auth{min-height:100vh;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at 50% 0,#17241c,#080b0a 50%)}
+.admin-auth-card{width:min(430px,100%);background:#121a16;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.admin-auth-card .logo{justify-content:center;margin-bottom:18px}.admin-auth-card h1{text-align:center;font-size:22px;margin:8px 0}.admin-auth-card p{text-align:center;color:var(--muted);font-size:11px;margin-bottom:18px}
+.admin-auth-card form{display:grid;gap:10px}.admin-auth-card input,.product-admin-form input,.product-admin-form select{width:100%;background:#0d1310;border:1px solid #314039;border-radius:8px;color:#fff;padding:11px;outline:none}
+.admin-auth-card input:focus,.product-admin-form input:focus,.product-admin-form select:focus{border-color:var(--green)}
+.admin-auth-card .outline{color:#dce7de}.auth-message,.admin-warning{margin-top:12px;padding:10px 12px;border-radius:8px;background:#2a2312;border:1px solid #6b5522;color:#f2d97b;font-size:11px}
+.back-link{display:block;margin:14px auto 0;background:none;color:var(--muted);font-size:11px}.admin-top-actions{display:flex;align-items:center;gap:8px}.admin-top-actions .outline{padding:8px 11px;font-size:10px}
+.admin-status-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.admin-status-list p{margin:0;padding:12px;background:#0d1410;border:1px solid var(--line);border-radius:8px;color:#dce6df;font-size:11px}
+.empty-mini{padding:24px;text-align:center;color:var(--muted);font-size:11px}.product-admin-form{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:14px;padding:12px;background:#0e1511;border:1px solid var(--line);border-radius:9px}
+.product-admin-form .primary{min-height:42px}.danger-btn{background:#34181a;color:#ff878c;border:1px solid #6d2c31;border-radius:6px;padding:5px 9px;font-size:10px}
+@media(max-width:900px){.product-admin-form{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-status-list{grid-template-columns:1fr}}
