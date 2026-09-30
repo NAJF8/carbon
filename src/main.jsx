@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './styles.css';
 import { loadStoreData, mapProduct } from './carbonApi';
 import Admin from './Admin';
+import { robotAvatar } from './assetMap';
 
 const demoProducts = [];
 
@@ -72,8 +73,8 @@ function App(){
       <section className="why"><h2>لماذا كاربون جروب؟</h2><div><article><b>✓</b><strong>منتجات أصلية</strong><span>جودة موثوقة 100%</span></article><article><b>↗</b><strong>توصيل سريع</strong><span>إلى جميع المحافظات</span></article><article><b>✦</b><strong>دعم متخصص</strong><span>نساعدك في اختيارك</span></article><article><b>★</b><strong>أفضل العلامات</strong><span>عالمية ومحلية</span></article></div></section>
     </main>
     <footer><Logo/><span>CARBON GROUP NUTRITION — مكملاتك، قوتك، إنجازك.</span><button className="admin-link" onClick={()=>setView('admin')}>لوحة الإدارة</button></footer>
-    <button className="chat-fab" onClick={()=>setChat(!chat)}><img src={chatbot?.avatar_url || `${import.meta.env.BASE_URL}assets/carbon-robot.webp`} alt="Carbon AI"/><span>{chatbot?.assistant_name_ar || 'مساعد كاربون الذكي'}</span></button>
-    {chat&&<div className="chat-window"><div className="chat-head"><img src={chatbot?.avatar_url || `${import.meta.env.BASE_URL}assets/carbon-robot.webp`}/><div><b>{chatbot?.assistant_name_ar || 'مساعد كاربون الذكي'}</b><span>متصل ببيانات المتجر</span></div><button onClick={()=>setChat(false)}>×</button></div><div className="chat-body"><p className="bot">{chatbot?.welcome_message_ar || 'أهلاً بك! كيف أساعدك في اختيار مكملك اليوم؟'}</p><div className="quick"><button>أريد بروتين</button><button>قارن لي كرياتين</button><button>عروض اليوم</button></div></div><div className="chat-input">إكتب رسالتك... <span>➤</span></div></div>}
+    <button className="chat-fab" onClick={()=>setChat(!chat)}><img src={robotAvatar} alt="Carbon AI"/><span>{chatbot?.assistant_name_ar || 'مساعد كاربون الذكي'}</span></button>
+    {chat&&<div className="chat-window"><div className="chat-head"><img src={robotAvatar}/><div><b>{chatbot?.assistant_name_ar || 'مساعد كاربون الذكي'}</b><span>متصل ببيانات المتجر</span></div><button onClick={()=>setChat(false)}>×</button></div><div className="chat-body"><p className="bot">{chatbot?.welcome_message_ar || 'أهلاً بك! كيف أساعدك في اختيار مكملك اليوم؟'}</p><div className="quick"><button>أريد بروتين</button><button>قارن لي كرياتين</button><button>عروض اليوم</button></div></div><div className="chat-input">إكتب رسالتك... <span>➤</span></div></div>}
     <nav className="bottom-nav"><button className="active"><Icon name="grid"/><span>الرئيسية</span></button><button><Icon name="grid"/><span>الأقسام</span></button><button onClick={()=>document.getElementById('comparison')?.scrollIntoView({behavior:'smooth'})}><Icon name="compare"/><span>المقارنة</span>{compare.length>0&&<b>{compare.length}</b>}</button><button onClick={()=>setToast(`${cart.length} منتجات في السلة`)}><Icon name="cart"/><span>السلة</span>{cart.length>0&&<b>{cart.length}</b>}</button><button><Icon name="user"/><span>حسابي</span></button></nav>
     {toast&&<div className="toast">✓ {toast}</div>}
   </div>
