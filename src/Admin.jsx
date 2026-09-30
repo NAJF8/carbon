@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   loginAdmin, signupAdmin, loadAdminData, saveProduct, deleteProduct,
   loadStoredAdminSession, storeAdminSession, clearAdminSession
@@ -129,7 +129,7 @@ export default function Admin({ onBack, Logo, Icon }) {
 
   const products = data?.products || [];
   const orders = data?.orders || [];
-  const revenue = useMemo(() => orders.filter(o=>o.status!=='cancelled').reduce((sum,o)=>sum+Number(o.total_iqd||0),0), [orders]);
+  const revenue = orders.filter(o=>o.status!=='cancelled').reduce((sum,o)=>sum+Number(o.total_iqd||0),0);
   const lowStock = products.filter(p=>Number(p.stock||0)<=Number(p.low_stock_threshold||5)).length;
 
   return <div className="admin-shell">
