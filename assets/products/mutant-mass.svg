@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 620">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1"><stop stop-color="#0b0f0d"/><stop offset=".5" stop-color="#272d29"/><stop offset="1" stop-color="#080a09"/></linearGradient>
+    <filter id="s"><feDropShadow dx="0" dy="14" stdDeviation="16" flood-opacity=".45"/></filter>
+  </defs>
+  <rect width="520" height="620" fill="none"/>
+  <g filter="url(#s)">
+    <ellipse cx="260" cy="565" rx="150" ry="28" fill="#000" opacity=".35"/>
+    <rect x="155" y="70" width="210" height="58" rx="16" fill="#151917"/>
+    <rect x="130" y="108" width="260" height="420" rx="42" fill="url(#g)" stroke="#474f4a" stroke-width="4"/>
+    <rect x="145" y="220" width="230" height="210" rx="18" fill="#c62828"/>
+    <rect x="145" y="220" width="230" height="48" rx="18" fill="#111" opacity=".88"/>
+    <text x="260" y="253" fill="#fff" font-family="Arial" font-weight="700" text-anchor="middle" font-size="18">MUTANT</text>
+    <text x="260" y="330" fill="#fff" font-family="Arial" font-weight="900" text-anchor="middle" font-size="42">MASS</text>
+    <text x="260" y="374" fill="#fff" font-family="Arial" font-weight="900" text-anchor="middle" font-size="30">GAINER</text>
+    <text x="260" y="410" fill="#fff" font-family="Arial" text-anchor="middle" font-size="14">SPORTS NUTRITION</text>
+  </g>
+</svg>
