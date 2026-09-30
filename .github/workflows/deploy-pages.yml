@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Build static site for GitHub Pages
 
 on:
   push:
@@ -6,25 +6,15 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
+  contents: write
 
 jobs:
   build:
+    if: \${{ !contains(github.event.head_commit.message, '[skip build]') }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Use GitHub Actions as Pages source
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh api --method PUT "repos/${{ github.repository }}/pages" -f build_type=workflow
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -35,24 +25,21 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build Vite site
         run: npm run build
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Publish built files to repository root
+        run: |
+          rm -rf assets
+          cp -R dist/assets ./assets
+          cp dist/index.html ./index.html
+          touch .nojekyll
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html assets .nojekyll
+          if git diff --cached --quiet; then
+            echo "No built changes to publish."
+          else
+            git commit -m "Publish built site [skip build]"
+            git push origin main
+          fi
