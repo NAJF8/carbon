@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles.css';
 import { loadStoreData, mapProduct } from './carbonApi';
+import Admin from './Admin';
 
 const demoProducts = [];
 
@@ -42,7 +43,7 @@ function App(){
   const filtered = useMemo(()=>products.filter(p => `${p.ar} ${p.name} ${p.brand} ${p.category}`.toLowerCase().includes(query.toLowerCase())),[products,query]);
   const add = p => { setCart(c=>[...c,p]); setToast(`تمت إضافة ${p.ar} إلى السلة`); setTimeout(()=>setToast(''),2200) };
   const toggleCompare = p => setCompare(c=>c.some(x=>x.id===p.id)?c.filter(x=>x.id!==p.id):c.length<4?[...c,p]:c);
-  if(view==='admin') return <Admin onBack={()=>setView('store')}/>;
+  if(view==='admin') return <Admin onBack={()=>setView('store')} Logo={Logo} Icon={Icon}/>;
   return <div className="app-shell">
     <div className="service-strip"><span>✓ منتجات أصلية 100%</span><span>▣ توصيل سريع لجميع المحافظات</span><span>◈ دعم فني مميز 24/7</span><span>★ أفضل العلامات العالمية</span></div>
     <header className="site-header"><button className="mobile-menu"><Icon name="menu"/></button><Logo/><nav><a className="active">الرئيسية</a><a onClick={()=>document.getElementById('products').scrollIntoView()}>منتجات البروتين</a><a>الكرياتين</a><a>مكملات الوزن</a><a>الفيتامينات</a><a>الإكسسوارات</a><a>العروض</a><a>العلامات ({brands.length})</a></nav><div className="head-tools"><button><Icon name="heart"/><span>المفضلة</span></button><button><Icon name="user"/><span>حسابي</span></button><button className="cart-tool" onClick={()=>setToast(`لديك ${cart.length} منتجات في السلة`)}><Icon name="cart"/><span>سلة المشتريات</span>{cart.length>0&&<b>{cart.length}</b>}</button></div></header>
@@ -62,7 +63,5 @@ function App(){
     {toast&&<div className="toast">✓ {toast}</div>}
   </div>
 }
-
-function Admin({onBack}){ return <div className="admin-shell"><aside><Logo/><button className="back" onClick={onBack}>← العودة للمتجر</button>{['لوحة التحكم','الطلبات','المنتجات','الأقسام','العلامات التجارية','المخزون','العروض والكوبونات','المساعد الذكي','الإعلانات','التقييمات','التوصيل والدفع','الإعدادات','التقارير والنسخ الاحتياطي'].map((x,i)=><button className={i===0?'selected':''} key={x}><span>{['⌂','▣','▤','▦','◇','◉','%','◌','▥','★','⌁','⚙','▥'][i]}</span>{x}</button>)}</aside><section className="admin-main"><div className="admin-top"><div><small>الأربعاء، 30 سبتمبر 2026</small><h1>مرحباً بك في لوحة التحكم</h1></div><button className="admin-user"><Icon name="user"/> المدير العام</button></div><div className="kpis">{[['طلبات اليوم','24','+18%'],['إيرادات اليوم','1,240,000','+12%'],['بانتظار المعالجة','08','-4%'],['منتجات منخفضة','12','تنبيه']].map(([a,b,c])=><div className="kpi" key={a}><span>{a}</span><strong>{b}</strong><em>{c}</em></div>)}</div><div className="admin-grid"><div className="admin-card sales"><div className="card-head"><h2>نظرة عامة على المبيعات</h2><button>آخر 7 أيام⌄</button></div><div className="chart"><i style={{height:'38%'}}/><i style={{height:'55%'}}/><i style={{height:'45%'}}/><i style={{height:'68%'}}/><i style={{height:'52%'}}/><i style={{height:'83%'}}/><i style={{height:'72%'}}/></div></div><div className="admin-card"><div className="card-head"><h2>أحدث الطلبات</h2><button>عرض الكل</button></div>{['CG-2026-000123','CG-2026-000122','CG-2026-000121'].map((x,i)=><div className="order" key={x}><span>{x}</span><small>{['قيد التجهيز','تم التوصيل','جديد'][i]}</small><b>{['125,000','78,000','55,000'][i]} د.ع</b></div>)}</div></div><div className="admin-card table-card"><div className="card-head"><h2>إدارة المنتجات</h2><button className="primary">+ إضافة منتج</button></div><table><thead><tr><th>المنتج</th><th>الفئة</th><th>السعر</th><th>المخزون</th><th>الحالة</th></tr></thead><tbody>{products.slice(0,4).map(p=><tr key={p.id}><td><ProductArt kind={p.image}/><span>{p.ar}</span></td><td>{p.category}</td><td>{p.price.toLocaleString('en-US')} د.ع</td><td>{p.id*7+4}</td><td><em className="status">متوفر</em></td></tr>)}</tbody></table></div></section></div> }
 
 createRoot(document.getElementById('root')).render(<App/>);
