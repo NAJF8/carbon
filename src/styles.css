@@ -22,3 +22,34 @@
 .empty-mini{padding:24px;text-align:center;color:var(--muted);font-size:11px}.product-admin-form{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:14px;padding:12px;background:#0e1511;border:1px solid var(--line);border-radius:9px}
 .product-admin-form .primary{min-height:42px}.danger-btn{background:#34181a;color:#ff878c;border:1px solid #6d2c31;border-radius:6px;padding:5px 9px;font-size:10px}
 @media(max-width:900px){.product-admin-form{grid-template-columns:repeat(2,minmax(0,1fr))}.admin-status-list{grid-template-columns:1fr}}
+
+.price-request{color:#fff;font-size:13px;font-weight:700}
+.compare-picker{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0 14px}
+.compare-pick{background:#0e1511;border:1px solid var(--line);border-radius:10px;padding:10px;display:flex;flex-direction:column;align-items:center;gap:6px;min-height:175px}
+.compare-pick:hover,.compare-pick.selected{border-color:var(--green);box-shadow:0 0 20px rgba(57,255,20,.08)}
+.compare-pick img{width:100%;height:105px;object-fit:contain}
+.compare-pick span{font-size:11px;text-align:center;line-height:1.5}
+.compare-pick b{font-size:10px;color:var(--green)}
+.comparison-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:10px}
+.comparison-table{min-width:700px;background:#0e1411}
+.comparison-table th,.comparison-table td{padding:12px;border-bottom:1px solid var(--line);text-align:center}
+.comparison-table th:first-child,.comparison-table td:first-child{text-align:right;color:var(--muted);min-width:130px}
+.comparison-table th{color:#fff;font-size:11px;position:relative}
+.comparison-table td{font-size:11px}
+.comparison-table th button{margin-right:6px;background:#2c191b;color:#ff767c;border-radius:50%;width:19px;height:19px}
+.compare-empty{min-height:110px;border:1px dashed #314039;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--muted);text-align:center}
+.compare-empty svg{color:var(--green)}
+.chat-fab{min-width:74px;min-height:74px;padding:7px 9px;border-radius:40px}
+.chat-fab img{width:58px;height:58px}
+.chat-window{width:380px;max-width:calc(100vw - 24px)}
+.chat-head img{width:52px;height:52px}
+.chat-body{min-height:220px}
+@media(max-width:700px){
+  .compare-picker{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .compare-pick{min-height:150px}
+  .compare-pick img{height:90px}
+  .chat-fab{left:14px;bottom:82px;min-width:68px;min-height:68px;padding:5px}
+  .chat-fab img{width:58px;height:58px}
+  .chat-window{left:10px;right:10px;bottom:155px;width:auto}
+  .chat-head img{width:48px;height:48px}
+}
