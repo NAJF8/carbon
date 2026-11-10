@@ -9,6 +9,7 @@ import ProductCard from './ProductCard.jsx';
 import { asset } from '../../utils/assets.js';
 import { loc, todayStr } from '../../utils/format.js';
 import { offerStatus } from '../../utils/pricing.js';
+import { waLink } from '../../utils/whatsapp.js';
 import { prefersReducedMotion } from '../../hooks/index.js';
 
 /* ───────── Shared product selection logic ───────── */
@@ -199,6 +200,124 @@ export function ProductsSection({ section }) {
   }
   if (!list.length) return null;
   return <SectionShell section={section}><ProductCarousel products={list.slice(0, 12)} /></SectionShell>;
+}
+
+/* ───────── Brand Values / Trust Badges ───────── */
+export function BrandValues() {
+  const { t } = useI18n();
+  const values = [
+    { icon: 'shield', title: t('values.original'), sub: t('values.originalSub') },
+    { icon: 'truck', title: t('values.shipping'), sub: t('values.shippingSub') },
+    { icon: 'chat', title: t('values.coach'), sub: t('values.coachSub') },
+    { icon: 'bag', title: t('values.cod'), sub: t('values.codSub') },
+  ];
+  return (
+    <section className="section bg-surface brand-values" aria-label="Brand Values">
+      <div className="container">
+        <ul className="values-grid">
+          {values.map((v, i) => (
+            <li key={i} className="val-card" data-reveal style={{ '--i': i }}>
+              <span className="val-icon"><Icon name={v.icon} size={26} /></span>
+              <div className="val-info">
+                <h3>{v.title}</h3>
+                <p>{v.sub}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+/* ───────── Instagram Showcase ───────── */
+export function InstagramFeed() {
+  const { t } = useI18n();
+  const posts = [
+    { img: 'banners/promo-athlete.webp', tag: '#CarbonAthlete' },
+    { img: 'products/on-gold-standard-whey.webp', tag: '#GoldStandard' },
+    { img: 'products/on-creatine.webp', tag: '#CreatinePower' },
+    { img: 'products/on-serious-mass.webp', tag: '#MassGains' },
+  ];
+  return (
+    <section className="section instagram-section" aria-labelledby="insta-h">
+      <div className="container">
+        <div className="section-head" data-reveal>
+          <div>
+            <h2 id="insta-h">{t('insta.title')}</h2>
+            <p>{t('insta.subtitle')}</p>
+          </div>
+          <a
+            href="https://www.instagram.com/carbon__group/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-outline btn-sm"
+          >
+            <Icon name="instagram" size={18} />
+            <span>{t('insta.follow')}</span>
+          </a>
+        </div>
+        <div className="insta-grid">
+          {posts.map((p, i) => (
+            <a
+              key={i}
+              href="https://www.instagram.com/carbon__group/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="insta-card"
+              data-reveal
+              style={{ '--i': i }}
+              aria-label={`Carbon Group Instagram: ${p.tag}`}
+            >
+              <img src={asset(p.img)} alt="" loading="lazy" decoding="async" />
+              <div className="insta-overlay">
+                <Icon name="instagram" size={26} />
+                <span>{p.tag}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ───────── Athletic CTA Banner ───────── */
+export function AthleticCta() {
+  const { t } = useI18n();
+  const { catalog } = useData();
+  const s = catalog.settings.store || {};
+  return (
+    <section className="section athletic-cta-section">
+      <div className="container">
+        <div className="athletic-cta-card" data-reveal>
+          <div className="cta-glow" />
+          <div className="cta-content">
+            <span className="badge badge-sale">CARBON NUTRITION</span>
+            <h2>{t('cta.title')}</h2>
+            <p>{t('cta.subtitle')}</p>
+            <div className="cta-actions">
+              <Link to="/shop" className="btn btn-primary btn-lg">
+                <Icon name="bag" size={18} />
+                <span>{t('cta.shopNow')}</span>
+              </Link>
+              {s.whatsapp && (
+                <a
+                  href={waLink(s.whatsapp, 'مرحباً، أود استشارة كابتن بخصوص كورس المكملات المناسب لي')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline btn-lg"
+                >
+                  <Icon name="whatsapp" size={18} />
+                  <span>{t('cta.consultCoach')}</span>
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export { offerStatus };

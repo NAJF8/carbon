@@ -3,7 +3,7 @@ import { useData } from '../store/data.jsx';
 import { useReveal } from '../hooks/index.js';
 import { useSeo } from '../utils/seo.js';
 import { loc } from '../utils/format.js';
-import { Hero, CategoriesRow, BannersRow, ProductsSection, useProductSets } from '../components/shop/sections.jsx';
+import { Hero, CategoriesRow, BannersRow, ProductsSection, BrandValues, AthleticCta, InstagramFeed, useProductSets } from '../components/shop/sections.jsx';
 import { EmptyState } from '../components/ui/index.jsx';
 
 export default function Home() {
@@ -18,6 +18,7 @@ export default function Home() {
   return (
     <div ref={ref}>
       <Hero hero={hero} />
+      <BrandValues />
       {sections.filter((s) => s.active).map((s) => {
         if (s.type === 'categories') return <CategoriesRow key={s.id} section={s} />;
         if (s.type === 'banners') return <BannersRow key={s.id} />;
@@ -29,6 +30,8 @@ export default function Home() {
           <EmptyState icon="box" title={t('empty.noProducts')} text={t('empty.noProductsText')} />
         </div></section>
       )}
+      <AthleticCta />
+      <InstagramFeed />
     </div>
   );
 }

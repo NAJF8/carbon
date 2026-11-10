@@ -84,7 +84,7 @@ function Login({ auth, preview }) {
 
 export default function AdminApp({ route }) {
   const { t } = useI18n();
-  const { adapter } = useData();
+  const { adapter, resetCatalog } = useData();
   const [user, setUser] = useState(undefined);
   const [menu, setMenu] = useState(false);
   useSeo({ title: 'Carbon Admin', path: '/admin' });
@@ -148,7 +148,26 @@ export default function AdminApp({ route }) {
           <div className="ad-top-tools"><LangSwitch compact /><ThemeSwitch />
             <button type="button" className="btn btn-ghost btn-sm" onClick={() => { adapter.auth.signOut(); navigate('/admin'); }}><Icon name="logout" size={18} /><span className="hide-sm">{t('admin.logout')}</span></button></div>
         </header>
-        {adapter.kind === 'local-preview' && <div className="ad-banner" role="note"><Icon name="alert" size={18} />{t('admin.previewBanner')}</div>}
+        {adapter.kind === 'local-preview' && (
+          <div className="ad-banner" role="note">
+            <Icon name="alert" size={18} />
+            <span className="grow">{t('admin.previewBanner')}</span>
+            <button
+              type="button"
+              className="btn btn-outline btn-sm"
+              style={{ padding: '4px 10px', fontSize: '0.78rem' }}
+              onClick={async () => {
+                if (window.confirm(t('admin.confirmResetCatalog'))) {
+                  await resetCatalog();
+                  window.location.reload();
+                }
+              }}
+            >
+              <Icon name="refresh" size={14} />
+              <span>{t('admin.resetCatalog')}</span>
+            </button>
+          </div>
+        )}
         <main className="ad-content" id="admin-main">{body}</main>
       </div>
       <Overlay open={menu} onClose={() => setMenu(false)} variant="drawer" title="CARBON ADMIN" className="menu-drawer admin-menu">{nav}</Overlay>

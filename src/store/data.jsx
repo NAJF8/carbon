@@ -44,10 +44,16 @@ export function DataProvider({ children }) {
     await adapter.setConfig(key, value);
     setCatalog((c) => ({ ...c, [key]: value }));
   }, [adapter]);
+  const resetCatalog = useCallback(async () => {
+    if (adapter?.resetLocal) {
+      adapter.resetLocal();
+      await load();
+    }
+  }, [adapter, load]);
 
   const value = useMemo(() => ({
-    catalog: catalog && normalizeCatalog(catalog), loading: !catalog && !error, error, reload: load, adapter, upsert, remove, setConfig,
-  }), [catalog, error, load, adapter, upsert, remove, setConfig]);
+    catalog: catalog && normalizeCatalog(catalog), loading: !catalog && !error, error, reload: load, resetCatalog, adapter, upsert, remove, setConfig,
+  }), [catalog, error, load, resetCatalog, adapter, upsert, remove, setConfig]);
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }
 export const useData = () => useContext(Ctx);
