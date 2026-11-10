@@ -1,0 +1,598 @@
+{
+  "version": 2,
+  "categories": [
+    {
+      "id": "protein",
+      "slug": "protein",
+      "name": { "ar": "البروتين", "en": "Protein" },
+      "icon": "protein",
+      "image": "assets/categories/cat-whey.webp",
+      "active": true,
+      "order": 1
+    },
+    {
+      "id": "creatine",
+      "slug": "creatine",
+      "name": { "ar": "الكرياتين", "en": "Creatine" },
+      "icon": "bolt",
+      "image": "assets/categories/cat-creatine.webp",
+      "active": true,
+      "order": 2
+    },
+    {
+      "id": "accessories",
+      "slug": "accessories",
+      "name": { "ar": "المستلزمات", "en": "Accessories" },
+      "icon": "dumbbell",
+      "image": "assets/categories/cat-accessories.webp",
+      "active": true,
+      "order": 3
+    },
+    {
+      "id": "clothing",
+      "slug": "clothing",
+      "name": { "ar": "الملابس", "en": "Clothing" },
+      "icon": "shirt",
+      "image": "",
+      "active": true,
+      "order": 4
+    },
+    {
+      "id": "offers",
+      "slug": "offers",
+      "kind": "offers",
+      "name": { "ar": "العروض", "en": "Offers" },
+      "icon": "flame",
+      "image": "",
+      "active": true,
+      "order": 5
+    }
+  ],
+  "brands": [
+    {
+      "id": "optimum-nutrition",
+      "name": { "ar": "أوبتيموم نيوترشن", "en": "Optimum Nutrition" },
+      "logo": "",
+      "active": true
+    },
+    {
+      "id": "muscletech",
+      "name": { "ar": "ماسل تك", "en": "MuscleTech" },
+      "logo": "",
+      "active": true
+    },
+    {
+      "id": "now-foods",
+      "name": { "ar": "ناو فودز", "en": "NOW Foods" },
+      "logo": "",
+      "active": true
+    },
+    {
+      "id": "jym",
+      "name": { "ar": "جيم نيوترشن", "en": "JYM Supplement Science" },
+      "logo": "",
+      "active": true
+    },
+    {
+      "id": "carbon-wear",
+      "name": { "ar": "كاربون وير", "en": "Carbon Performance" },
+      "logo": "assets/brand/logo.webp",
+      "active": true
+    }
+  ],
+  "products": [
+    {
+      "id": "on-whey-gold",
+      "slug": "on-gold-standard-100-whey",
+      "sku": "ON-WHEY-5LB",
+      "name": {
+        "ar": "جولد ستاندرد 100% واي بروتين",
+        "en": "Gold Standard 100% Whey Protein"
+      },
+      "description": {
+        "ar": "بروتين مصل اللبن الأكثر مبيعاً عالمياً من أوبتيموم نيوترشن، يوفر 24 غرام بروتين مصل لبن نقي لكل حصة مع 5.5 غرام BCAA و4 غرام جلوتامين لدعم استشفاء العضلات السريع وبناء الكتلة العضلية الصافية.",
+        "en": "The world's bestselling whey protein from Optimum Nutrition. Delivers 24g of pure whey protein per serving with 5.5g BCAAs and 4g Glutamine for rapid recovery and lean muscle growth."
+      },
+      "benefits": {
+        "ar": "24 غرام بروتين مصل اللبن عالي النقاوة في كل حصة\n5.5 غرام أحماض أمينية متفرعة السلسلة BCAA للاستشفاء\nسريع الذوبان بدون تكتل وسهل الهضم\nخالٍ من الجلوتين والدهون الزائدة",
+        "en": "24g high-purity whey protein per scoop\n5.5g naturally occurring BCAAs for faster recovery\nInstantized to mix easily with a spoon\nLow in fat and sugar, gluten-free"
+      },
+      "categoryId": "protein",
+      "brandId": "optimum-nutrition",
+      "price": 78000,
+      "oldPrice": 92000,
+      "stock": 35,
+      "lowStockThreshold": 8,
+      "weight": 2.27,
+      "size": "2.27 kg • 74 حصة",
+      "sizes": ["907g (2 lbs)", "2.27kg (5 lbs)", "4.54kg (10 lbs)"],
+      "colors": [],
+      "rating": 4.8,
+      "reviewCount": 1245,
+      "tags": ["whey", "protein", "bestseller", "recovery", "muscle"],
+      "images": [
+        { "src": "assets/products/on-gold-standard-whey.webp", "alt": "Optimum Nutrition Gold Standard Whey" },
+        { "src": "assets/banners/hero-bottles.webp", "alt": "Optimum Nutrition Gold Standard Whey in Gym" }
+      ],
+      "featured": true,
+      "bestseller": true,
+      "newArrival": false,
+      "active": true,
+      "createdAt": "2026-10-15T12:00:00Z"
+    },
+    {
+      "id": "on-creatine-mono",
+      "slug": "on-creatine-monohydrate-powder",
+      "sku": "ON-CREA-300",
+      "name": {
+        "ar": "كرياتين مونوهيدرات ميكرونايزد",
+        "en": "Micronized Creatine Monohydrate"
+      },
+      "description": {
+        "ar": "كرياتين نقي 100% عالي النقاء ميكرونايزد لسرعة الذوبان والامتصاص. يساعد في تعزيز قوة العضلات، زيادة طاقة ATP، وتحسين الأداء الرياضي أثناء التمارين عالية الكثافة.",
+        "en": "100% pure micronized creatine monohydrate for superior solubility and uptake. Boosts muscular power, ATP production, and high-intensity workout endurance."
+      },
+      "benefits": {
+        "ar": "5 غرام كرياتين مونوهيدرات نقي 100% بكل جرعة\nحبيبات دقيقة ميكرونايزد تذوب بسهولة بدون رواسب\nبدون أي نكهة ليناسب الخلط مع البروتين أو العصير\nزيادة فورية في القوة العضلية والتحمل",
+        "en": "5g pure micronized creatine monohydrate per serving\nUltra-fine powder dissolves clear with no residue\nUnflavored, easy to stack with protein or pre-workout\nClinically proven to increase muscular strength and volume"
+      },
+      "categoryId": "creatine",
+      "brandId": "optimum-nutrition",
+      "price": 55000,
+      "oldPrice": 65000,
+      "stock": 42,
+      "lowStockThreshold": 10,
+      "weight": 0.3,
+      "size": "300g • 60 حصة",
+      "sizes": ["300g (60 حصة)", "600g (120 حصة)"],
+      "colors": [],
+      "rating": 4.7,
+      "reviewCount": 634,
+      "tags": ["creatine", "strength", "power", "monohydrate"],
+      "images": [
+        { "src": "assets/products/on-creatine.webp", "alt": "Optimum Nutrition Micronized Creatine Monohydrate" }
+      ],
+      "featured": true,
+      "bestseller": true,
+      "newArrival": false,
+      "active": true,
+      "createdAt": "2026-10-12T10:00:00Z"
+    },
+    {
+      "id": "on-serious-mass",
+      "slug": "on-serious-mass-gainer",
+      "sku": "ON-SM-6LB",
+      "name": {
+        "ar": "سيريوس ماس لزيادة الوزن والضخامة",
+        "en": "Serious Mass Weight Gainer"
+      },
+      "description": {
+        "ar": "مكمل زيادة الوزن والكتلة العضلية النهائي، يقدم 1250 سعرة حرارية و50 غرام بروتين مكمل في كل حصة لدعم الأشخاص الذين يواجهون صعوبة في زيادة الوزن والكتلة.",
+        "en": "The ultimate weight gain formula providing 1,250 calories and 50 grams of protein per serving to support serious bulk and muscular mass."
+      },
+      "benefits": {
+        "ar": "1250 سعرة حرارية لكل حصة لدعم الفائض الحراري\n50 غرام بروتين مصل اللبن والكازين\nأكثر من 250 غرام كربوهيدرات معقدة للطاقة\nمدعم بالفيتامينات والمعادن الأساسية والكرياتين",
+        "en": "1,250 nutrient-dense calories per serving\n50g blended proteins including whey and casein\n250g+ carbohydrates for glycogen replenishment\nFortified with 25 essential vitamins & minerals"
+      },
+      "categoryId": "protein",
+      "brandId": "optimum-nutrition",
+      "price": 115000,
+      "oldPrice": 138000,
+      "stock": 18,
+      "lowStockThreshold": 4,
+      "weight": 2.72,
+      "size": "2.72 kg • 1250 سعرة",
+      "sizes": ["2.72kg (6 lbs)", "5.44kg (12 lbs)"],
+      "colors": [],
+      "rating": 4.6,
+      "reviewCount": 892,
+      "tags": ["gainer", "mass", "protein", "calories", "bulk"],
+      "images": [
+        { "src": "assets/products/on-serious-mass.webp", "alt": "Optimum Nutrition Serious Mass Gainer" }
+      ],
+      "featured": false,
+      "bestseller": true,
+      "newArrival": false,
+      "active": true,
+      "createdAt": "2026-10-10T08:00:00Z"
+    },
+    {
+      "id": "mt-mass-tech-elite",
+      "slug": "muscletech-mass-tech-elite",
+      "sku": "MT-MTE-7LB",
+      "name": {
+        "ar": "ماسل تك ماس تك إليت",
+        "en": "MuscleTech Mass Tech Elite"
+      },
+      "description": {
+        "ar": "مكمل ضخامة متطور يجمع بين البروتين النقي متعدد المصادر والكربوهيدرات عالية الجودة مع 10 غرام BCAA و3 غرام كرياتين لتحقيق نمو عضلي حقيقي وسريع.",
+        "en": "Advanced muscle gainer featuring multi-phase protein system, 10g BCAAs, and 3g creatine for lean muscle density and explosive power."
+      },
+      "benefits": {
+        "ar": "80 غرام بروتين مكمل عند خلطه بالحليب\n10 غرام أحماض أمينية BCAA عالية الامتصاص\n3 غرام كرياتين مونوهيدرات مثبت الفعالية\nمدعم بإنزيمات هاضمة لراحة المعدة",
+        "en": "Up to 80g protein when mixed with skim milk\n10g naturally occurring BCAAs\n3g HPLC-tested creatine monohydrate\nDigestive enzymes for optimal nutrient absorption"
+      },
+      "categoryId": "protein",
+      "brandId": "muscletech",
+      "price": 99000,
+      "oldPrice": 118000,
+      "stock": 22,
+      "lowStockThreshold": 5,
+      "weight": 3.18,
+      "size": "3.18 kg • زيادة الكتلة",
+      "sizes": ["3.18kg (7 lbs)"],
+      "colors": [],
+      "rating": 4.4,
+      "reviewCount": 412,
+      "tags": ["muscletech", "mass", "protein", "bcaa"],
+      "images": [
+        { "src": "assets/products/masstech.webp", "alt": "MuscleTech Mass Tech Elite" }
+      ],
+      "featured": false,
+      "bestseller": false,
+      "newArrival": true,
+      "active": true,
+      "createdAt": "2026-11-01T15:00:00Z"
+    },
+    {
+      "id": "now-daily-vits",
+      "slug": "now-foods-daily-vits",
+      "sku": "NOW-DV-100",
+      "name": {
+        "ar": "فيتامينات يومية متكاملة ديلي فيتس",
+        "en": "NOW Foods Daily Vits Multi-Vitamin"
+      },
+      "description": {
+        "ar": "مجموعة شاملة من الفيتامينات والمعادن الأساسية مع اللوتين والليكوبين لدعم الصحة العامة، المناعة، ونشاط التمثيل الغذائي للرياضيين وأصحاب المجهود البدني.",
+        "en": "Comprehensive multivitamin with lutein and lycopene designed to bridge the nutrient gap in daily diets for active athletes."
+      },
+      "benefits": {
+        "ar": "كبسولة واحدة يومياً تغطي الاحتياج اليومي\nغني بفيتامينات B المركبة وفيتامين C وD3\nمدعم بمضادات الأكسدة لتقوية جهاز المناعة\nكبسولات نباتية خالية من المكونات المعدلة وراثياً",
+        "en": "One-tablet daily convenience\nRich in Vitamin B-Complex, C, and D3\nPotent antioxidant blend with Lutein & Lycopene\nNon-GMO vegetarian formula"
+      },
+      "categoryId": "accessories",
+      "brandId": "now-foods",
+      "price": 28000,
+      "oldPrice": 35000,
+      "stock": 50,
+      "lowStockThreshold": 12,
+      "weight": 0.2,
+      "size": "100 كبسولة نباتية",
+      "sizes": ["100 كبسولة", "250 كبسولة"],
+      "colors": [],
+      "rating": 4.5,
+      "reviewCount": 321,
+      "tags": ["vitamins", "health", "immunity", "minerals"],
+      "images": [
+        { "src": "assets/products/daily-vits-now.webp", "alt": "NOW Foods Daily Vits" }
+      ],
+      "featured": false,
+      "bestseller": false,
+      "newArrival": false,
+      "active": true,
+      "createdAt": "2026-10-05T09:00:00Z"
+    },
+    {
+      "id": "jym-pre-jym",
+      "slug": "jym-pre-jym-high-performance-preworkout",
+      "sku": "JYM-PRE-30",
+      "name": {
+        "ar": "بري جيم مكمل الطاقة والتركيز",
+        "en": "Pre JYM High Performance Pre-Workout"
+      },
+      "description": {
+        "ar": "المكمل الأشهر لما قبل التمرين بجرعات سريرية كاملة وشفافة بدون خلطات غامضة. يجمع بين السيترولين والبيتا ألانين والكرياتين والكافيين لطاقة وضخ عضلي هائل.",
+        "en": "Fully transparent pre-workout with 13 scientifically backed ingredients at clinical doses for unmatched stamina, focus, and muscle pumps."
+      },
+      "benefits": {
+        "ar": "6 غرام سيترولين مالات لضخ الدم والأكسجين\n2 غرام كرياتين HCL لامتصاص فوري بدون انتفاخ\n300 ملغ كافيين نظيف لطاقة وتركيز لا مثيل له\nبدون ألوان اصطناعية أو مكونات مخفية",
+        "en": "6g Citrulline Malate for enhanced nitric oxide and vascularity\n2g Creatine HCL for rapid uptake\n300mg Caffeine for sustained energy and mental clarity\nZero proprietary blends"
+      },
+      "categoryId": "creatine",
+      "brandId": "jym",
+      "price": 68000,
+      "oldPrice": 76000,
+      "stock": 19,
+      "lowStockThreshold": 5,
+      "weight": 0.75,
+      "size": "30 حصة • طاقة وتركيز",
+      "sizes": ["30 حصة"],
+      "colors": [],
+      "rating": 4.6,
+      "reviewCount": 189,
+      "tags": ["preworkout", "energy", "pump", "focus", "creatine"],
+      "images": [
+        { "src": "assets/products/on-creatine.webp", "alt": "Pre JYM Supplement Science" }
+      ],
+      "featured": true,
+      "bestseller": false,
+      "newArrival": true,
+      "active": true,
+      "createdAt": "2026-11-04T11:00:00Z"
+    },
+    {
+      "id": "carbon-shaker-pro",
+      "slug": "carbon-pro-shaker-bottle-750ml",
+      "sku": "CG-SHK-750",
+      "name": {
+        "ar": "شيكر كاربون الرياضي بروفيشنال 750 مل",
+        "en": "Carbon Pro Shaker Bottle 750ml"
+      },
+      "description": {
+        "ar": "شيكر رياضي مخصص لخلط البروتين والمكملات بسهولة دون تكتل مع كرة خلط ستانلس ستيل مضادة للصدأ وتصميم مانع للتسريب 100% وخالٍ من مادة BPA.",
+        "en": "Heavy-duty gym shaker bottle with surgical steel blending wire and leak-proof seal. 100% BPA-free and dishwasher safe."
+      },
+      "benefits": {
+        "ar": "سعة 750 مل مع تدريج واضح بالمل والاونصة\nمحكم الإغلاق ومقاوم للتسريب 100%\nخالٍ من مادة BPA ومصنوع من البلاستيك الآمن غذائياً\nمقبض عملي للحمل في الجيم",
+        "en": "750ml capacity with embossed ml/oz markings\n100% leak-proof flip cap seal\nBPA-free food-grade durable polymer\nIntegrated carry loop"
+      },
+      "categoryId": "accessories",
+      "brandId": "carbon-wear",
+      "price": 15000,
+      "oldPrice": 20000,
+      "stock": 60,
+      "lowStockThreshold": 15,
+      "weight": 0.18,
+      "size": "750 مل",
+      "sizes": [],
+      "colors": [
+        { "name": { "ar": "أسود كاربون", "en": "Carbon Black" }, "hex": "#111827" },
+        { "name": { "ar": "أخضر نيون", "en": "Neon Green" }, "hex": "#22c55e" }
+      ],
+      "rating": 4.9,
+      "reviewCount": 142,
+      "tags": ["shaker", "accessories", "gym", "bottle"],
+      "images": [
+        { "src": "assets/products/shaker-bottle.webp", "alt": "Carbon Shaker Pro Bottle" }
+      ],
+      "featured": true,
+      "bestseller": true,
+      "newArrival": false,
+      "active": true,
+      "createdAt": "2026-10-20T14:00:00Z"
+    },
+    {
+      "id": "carbon-oversized-tee",
+      "slug": "carbon-athletic-oversized-tee",
+      "sku": "CG-TEE-OVR",
+      "name": {
+        "ar": "تيشيرت كاربون الرياضي أوفرسايز",
+        "en": "Carbon Athletic Oversized Tee"
+      },
+      "description": {
+        "ar": "تيشيرت تدريب بقصة أوفرسايز رياضية مريحة، مصنوع من قطن ممشط ثقيل الوزن 240 GSM مع مادة الإيلاستين لتوفير أقصى قدر من التهوية والحرية أثناء التمارين الشاقة.",
+        "en": "Premium heavyweight 240 GSM combed cotton oversized gym tee. Breathable, sweat-wicking, with drop-shoulder silhouette built for serious lifters."
+      },
+      "benefits": {
+        "ar": "نسيج قطني ثقيل 240 GSM عالي الجودة والتحمل\nقصة أكتاف ساقطة Drop-shoulder لمظهر رياضي حديث\nطباعة هوية Carbon المقاومة للغسيل المتكرر\nتهوية ممتازة تمنع احتباس الحرارة",
+        "en": "Heavyweight 240 GSM combed cotton blend\nDrop-shoulder athletic relaxed fit\nScreen-printed durable Carbon branding\nBreathable and durable through intense sessions"
+      },
+      "categoryId": "clothing",
+      "brandId": "carbon-wear",
+      "price": 35000,
+      "oldPrice": 42000,
+      "stock": 28,
+      "lowStockThreshold": 6,
+      "weight": 0.35,
+      "size": "L",
+      "sizes": ["M", "L", "XL", "2XL"],
+      "colors": [
+        { "name": { "ar": "أسود فحمي", "en": "Charcoal Black" }, "hex": "#121816" },
+        { "name": { "ar": "أخضر زيتي", "en": "Military Olive" }, "hex": "#2a3b2f" }
+      ],
+      "rating": 4.9,
+      "reviewCount": 86,
+      "tags": ["clothing", "shirt", "gymwear", "oversized"],
+      "images": [
+        { "src": "assets/brand/logo.webp", "alt": "Carbon Oversized Athletic Tee" }
+      ],
+      "featured": true,
+      "bestseller": false,
+      "newArrival": true,
+      "active": true,
+      "createdAt": "2026-11-06T16:00:00Z"
+    }
+  ],
+  "offers": [
+    {
+      "id": "sale-summer-2026",
+      "name": { "ar": "عروض كاربون الرياضية الكبرى", "en": "Carbon Mega Athletic Sale" },
+      "banner": "assets/banners/promo-athlete.webp",
+      "start": "2026-10-01",
+      "end": "2026-12-31",
+      "type": "percent",
+      "value": 15,
+      "scope": "categories",
+      "productIds": [],
+      "categoryIds": ["protein", "creatine"],
+      "brandIds": [],
+      "active": true
+    }
+  ],
+  "coupons": [
+    {
+      "id": "cpn-carbon10",
+      "code": "CARBON10",
+      "type": "percent",
+      "value": 10,
+      "minOrder": 50000,
+      "maxDiscount": 20000,
+      "start": "2026-10-01",
+      "end": "2026-12-31",
+      "usageLimit": 500,
+      "usedCount": 24,
+      "perCustomerLimit": 2,
+      "productIds": [],
+      "categoryIds": [],
+      "active": true
+    },
+    {
+      "id": "cpn-welcome5",
+      "code": "WELCOME5",
+      "type": "fixed",
+      "value": 5000,
+      "minOrder": 30000,
+      "maxDiscount": 5000,
+      "start": "2026-10-01",
+      "end": "2026-12-31",
+      "usageLimit": 200,
+      "usedCount": 11,
+      "perCustomerLimit": 1,
+      "productIds": [],
+      "categoryIds": [],
+      "active": true
+    }
+  ],
+  "banners": [
+    {
+      "id": "bn-hero-athlete",
+      "title": { "ar": "التغذية الذكية تغير حياتك الرياضية", "en": "Smart nutrition changes your athletic life" },
+      "image": "assets/banners/promo-athlete.webp",
+      "imageMobile": "assets/banners/promo-athlete.webp",
+      "cta": { "label": { "ar": "تسوق العروض", "en": "Shop offers" } },
+      "link": "/offers",
+      "start": "2026-10-01",
+      "end": "2026-12-31",
+      "active": true,
+      "order": 1
+    }
+  ],
+  "home": {
+    "hero": {
+      "active": true,
+      "title": { "ar": "ابنِ أفضل نسخة من نفسك", "en": "Build your strongest self" },
+      "subtitle": {
+        "ar": "مكملات غذائية أصلية 100% وملابس ومستلزمات رياضية مختارة بعناية لأداء أقوى ونتائج تدوم.",
+        "en": "100% authentic supplements, sportswear and gym accessories built for higher performance."
+      },
+      "image": "assets/banners/hero-robot.webp",
+      "imageSmall": "assets/banners/hero-robot-480.webp",
+      "cta": { "label": { "ar": "تسوق الآن", "en": "Shop now" }, "link": "/shop" },
+      "cta2": { "label": { "ar": "اكتشف العروض", "en": "See offers" }, "link": "/offers" }
+    },
+    "sections": [
+      {
+        "id": "s-categories",
+        "type": "categories",
+        "active": true,
+        "title": { "ar": "تسوق حسب القسم", "en": "Shop by category" },
+        "subtitle": { "ar": "اختر القسم المناسب لأهدافك الرياضية", "en": "Pick the aisle that matches your goals" },
+        "background": "default"
+      },
+      {
+        "id": "s-banners",
+        "type": "banners",
+        "active": true,
+        "title": { "ar": "", "en": "" },
+        "subtitle": { "ar": "", "en": "" },
+        "background": "default"
+      },
+      {
+        "id": "s-offers",
+        "type": "products",
+        "source": "offers",
+        "active": true,
+        "title": { "ar": "عروض خاصة لفترة محدودة", "en": "Special limited-time offers" },
+        "subtitle": { "ar": "أفضل الأسعار على منتجات مختارة", "en": "Best prices on selected supplements" },
+        "link": "/offers",
+        "background": "surface"
+      },
+      {
+        "id": "s-best",
+        "type": "products",
+        "source": "bestseller",
+        "active": true,
+        "title": { "ar": "الأكثر مبيعاً", "en": "Best sellers" },
+        "subtitle": { "ar": "منتجات يختارها الرياضيون لتحقيق أفضل النتائج", "en": "Top picks trusted by athletes" },
+        "link": "/shop?flag=bestseller",
+        "background": "default"
+      },
+      {
+        "id": "s-new",
+        "type": "products",
+        "source": "new",
+        "active": true,
+        "title": { "ar": "وصل حديثاً", "en": "New arrivals" },
+        "subtitle": { "ar": "أحدث إضافات المتجر من المكملات والتجهيزات", "en": "Fresh additions to the store" },
+        "link": "/shop?flag=new",
+        "background": "default"
+      },
+      {
+        "id": "s-protein",
+        "type": "products",
+        "source": "category",
+        "categoryId": "protein",
+        "active": true,
+        "title": { "ar": "منتجات البروتين", "en": "Protein products" },
+        "subtitle": { "ar": "بناء عضلات أقوى واستشفاء أسرع", "en": "Build lean muscle and recover faster" },
+        "link": "/shop?cat=protein",
+        "background": "surface"
+      },
+      {
+        "id": "s-creatine",
+        "type": "products",
+        "source": "category",
+        "categoryId": "creatine",
+        "active": true,
+        "title": { "ar": "الكرياتين ومكملات القوة", "en": "Creatine & Strength" },
+        "subtitle": { "ar": "قوة انفجارية وطاقة وأداء أعلى في التمرين", "en": "Explosive power and athletic endurance" },
+        "link": "/shop?cat=creatine",
+        "background": "default"
+      },
+      {
+        "id": "s-accessories",
+        "type": "products",
+        "source": "category",
+        "categoryId": "accessories",
+        "active": true,
+        "title": { "ar": "المستلزمات الرياضية", "en": "Gym Accessories" },
+        "subtitle": { "ar": "كل ما تحتاجه لتجهيز تمرينك من الشيكرات والأربطة", "en": "Everything you need for your workout" },
+        "link": "/shop?cat=accessories",
+        "background": "default"
+      },
+      {
+        "id": "s-clothing",
+        "type": "products",
+        "source": "category",
+        "categoryId": "clothing",
+        "active": true,
+        "title": { "ar": "الملابس الرياضية", "en": "Sportswear & Apparel" },
+        "subtitle": { "ar": "ملابس تمرين مريحة ومصممة لتحمل الأوزان", "en": "Athletic wear built for heavy sessions" },
+        "link": "/shop?cat=clothing",
+        "background": "surface"
+      }
+    ]
+  },
+  "settings": {
+    "store": {
+      "name": { "ar": "كاربون جروب", "en": "Carbon Group Nutrition" },
+      "logo": "assets/brand/logo.webp",
+      "phone": "+9647700000000",
+      "whatsapp": "+9647700000000",
+      "instagram": "https://www.instagram.com/carbon__group/",
+      "address": { "ar": "العراق — توصيل سريع لجميع المحافظات", "en": "Iraq — Fast shipping to all provinces" },
+      "email": "mohameadalhaear100@gmail.com"
+    },
+    "theme": { "primary": "#22c55e", "accent": "#39ff14", "defaultMode": "system" },
+    "languages": { "ar": true, "en": true, "default": "ar" },
+    "currency": "IQD",
+    "shipping": { "fee": 5000, "freeOver": 100000, "note": { "ar": "توصيل مجاني للطلبات فوق 100,000 د.ع", "en": "Free shipping on orders over 100,000 IQD" } },
+    "general": { "maintenance": false, "chatEnabled": true, "offersEnabled": true, "reviewsEnabled": true },
+    "chat": {
+      "welcome": {
+        "ar": "أهلاً بك في كاربون جروب! كيف يمكنني مساعدتك في اختيار مكمّلك الرياضي اليوم؟",
+        "en": "Welcome to Carbon Group! How can I help you choose your fitness supplements today?"
+      },
+      "supportNote": {
+        "ar": "للإجابة عن استفساراتكم الخاصة أو تأكيد توفر المنتجات، تواصلوا مع كابتن كاربون مباشرة عبر واتساب.",
+        "en": "For personalized supplement advice or instant stock checks, contact our team directly on WhatsApp."
+      },
+      "quickReplies": [
+        { "id": "q1", "label": { "ar": "أريد بروتين للضخامة", "en": "Protein for bulk" }, "action": { "type": "category", "value": "protein" } },
+        { "id": "q2", "label": { "ar": "الكرياتين والقوة", "en": "Creatine & Strength" }, "action": { "type": "category", "value": "creatine" } },
+        { "id": "q3", "label": { "ar": "العروض والخصومات", "en": "Offers & discounts" }, "action": { "type": "offers", "value": "" } },
+        { "id": "q4", "label": { "ar": "تحدث مع الكابتن واتساب", "en": "Talk to support on WhatsApp" }, "action": { "type": "whatsapp", "value": "" } }
+      ]
+    }
+  }
+}

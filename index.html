@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>كاربون جروب | Carbon Group Nutrition</title>
+    <meta name="description" content="متجر كاربون جروب للمكملات الغذائية والملابس والمستلزمات الرياضية. Carbon Group Nutrition — supplements, sportswear and gym accessories." />
+    <link rel="canonical" href="https://najf8.github.io/carbon/" />
+    <meta name="theme-color" content="#0d1210" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Carbon Group Nutrition" />
+    <meta property="og:title" content="كاربون جروب | Carbon Group Nutrition" />
+    <meta property="og:description" content="مكملات غذائية وملابس ومستلزمات رياضية. Supplements, sportswear and gym accessories." />
+    <meta property="og:image" content="https://najf8.github.io/carbon/assets/brand/logo-192.png" />
+    <meta property="og:url" content="https://najf8.github.io/carbon/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" type="image/png" href="%BASE_URL%assets/brand/favicon.png" />
+    <link rel="apple-touch-icon" href="%BASE_URL%assets/brand/logo-192.png" />
+    <link rel="preload" as="image" href="%BASE_URL%assets/banners/hero-robot-480.webp" type="image/webp" />
+    <script>
+      // Apply saved theme + language before first paint (prevents flash).
+      (function () {
+        try {
+          var t = localStorage.getItem('carbon-theme') || 'system';
+          var dark = t === 'dark' || (t === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+          var d = document.documentElement;
+          d.dataset.theme = dark ? 'dark' : 'light';
+          var l = localStorage.getItem('carbon-lang') || 'ar';
+          d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>Carbon Group Nutrition requires JavaScript. / يتطلب الموقع تفعيل جافاسكربت.</noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

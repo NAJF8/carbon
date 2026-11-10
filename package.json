@@ -1,0 +1,26 @@
+{
+  "name": "carbon-group-nutrition",
+  "private": true,
+  "version": "2.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "optimize:brand": "node scripts/optimize-images.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-sans-arabic": "^5.3.0",
+    "firebase": "^13.2.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "sharp": "^0.35.5",
+    "vite": "^8.3.1",
+    "vitest": "^4.1.12"
+  }
+}

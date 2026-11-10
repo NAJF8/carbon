@@ -1,0 +1,68 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isEmailVerified() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    // Admin role is granted ONLY via custom claims OR authoritative /admins/{uid} record
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.admin == true ||
+        (isEmailVerified() && exists(/databases/$(database)/documents/admins/$(request.auth.uid)))
+      );
+    }
+
+    // Public catalog collections — readable by anyone (public store), writable ONLY by authenticated Admins
+    match /categories/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /brands/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /products/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /offers/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /coupons/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /banners/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    match /config/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Admins collection: NEVER writable by clients. Managed strictly via Firebase Admin SDK / Console.
+    match /admins/{uid} {
+      allow read: if isSignedIn() && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    // Default catch-all: deny any unmapped paths
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

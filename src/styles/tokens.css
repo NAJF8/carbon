@@ -1,0 +1,134 @@
+/* ==========================================================================
+   CARBON 2.0 — Design Tokens
+   Preserving Carbon Group Brand Identity (Athletic Deep Emerald & Carbon)
+   Typography: IBM Plex Sans Arabic for Arabic, Arial for English.
+   ========================================================================== */
+
+:root {
+  --font-ar: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-en: Arial, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing Scale */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+
+  /* Radius Scale */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-xl: 22px;
+  --r-full: 9999px;
+
+  /* Transitions */
+  --tr-fast: 160ms cubic-bezier(0.4, 0, 0.2, 1);
+  --tr-base: 240ms cubic-bezier(0.4, 0, 0.2, 1);
+  --tr-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --tr-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Primary Brand Accent (Overridable via Admin Settings) */
+  --brand-green: #22c55e;
+  --brand-neon: #39ff14;
+  --brand-hover: #16a34a;
+
+  /* Semantic Status Colors */
+  --col-success: #22c55e;
+  --col-warning: #f59e0b;
+  --col-danger: #ef4444;
+  --col-info: #3b82f6;
+
+  /* Perspective & Stage */
+  --perspective: 1200px;
+}
+
+/* ---------------- DARK THEME (Default & Brand Canonical) ---------------- */
+:root,
+[data-theme='dark'] {
+  --bg: #080d0b;
+  --bg-gradient: radial-gradient(ellipse 90% 60% at 50% -15%, #13241b 0%, #080d0b 70%);
+  --surface: #0f1713;
+  --surface-2: #15201b;
+  --surface-3: #1c2b24;
+  --surface-raised: #1f3028;
+  --surface-overlay: rgba(15, 23, 19, 0.88);
+
+  --text: #f4f6f4;
+  --text-2: #cbd5cf;
+  --text-muted: #86968d;
+  --text-dim: #54645b;
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --border-glow: rgba(57, 255, 20, 0.28);
+
+  --primary: var(--brand-override, var(--brand-green));
+  --primary-hover: var(--brand-hover);
+  --primary-glow: rgba(34, 197, 94, 0.22);
+  --primary-contrast: #051409;
+  --accent: var(--accent-override, var(--brand-neon));
+
+  --badge-bg: rgba(34, 197, 94, 0.14);
+  --badge-text: #4ade80;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 24px rgba(34, 197, 94, 0.25);
+
+  --scrim: rgba(0, 0, 0, 0.75);
+}
+
+/* ---------------- LIGHT THEME ---------------- */
+[data-theme='light'] {
+  --bg: #f8faf8;
+  --bg-gradient: radial-gradient(ellipse 90% 60% at 50% -15%, #e6f4ea 0%, #f8faf8 70%);
+  --surface: #ffffff;
+  --surface-2: #f1f5f2;
+  --surface-3: #e5ece7;
+  --surface-raised: #ffffff;
+  --surface-overlay: rgba(255, 255, 255, 0.92);
+
+  --text: #0e1712;
+  --text-2: #24342a;
+  --text-muted: #5e7065;
+  --text-dim: #8b9d92;
+
+  --border: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.16);
+  --border-glow: rgba(22, 163, 74, 0.28);
+
+  --primary: var(--brand-override, #16a34a);
+  --primary-hover: #15803d;
+  --primary-glow: rgba(22, 163, 74, 0.18);
+  --primary-contrast: #ffffff;
+  --accent: var(--accent-override, #059669);
+
+  --badge-bg: rgba(22, 163, 74, 0.12);
+  --badge-text: #15803d;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 20px rgba(22, 163, 74, 0.2);
+
+  --scrim: rgba(14, 23, 18, 0.5);
+}
+
+/* Reduced motion preference override */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,35 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isEmailVerified() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    // Admin authorization via custom claim OR verified email + admin document
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.admin == true ||
+        (isEmailVerified() && firestore.exists(/databases/(default)/documents/admins/$(request.auth.uid)))
+      );
+    }
+
+    // Public read for uploaded product and banner images.
+    // Writes strictly reserved for authorized admins with strict MIME & size limits.
+    match /uploads/{folder}/{allPaths=**} {
+      allow read: if true;
+      allow create, update: if isAdmin()
+        && request.resource.size <= 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/(jpeg|png|webp|avif|gif)');
+      allow delete: if isAdmin();
+    }
+
+    // All other paths strictly closed
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
